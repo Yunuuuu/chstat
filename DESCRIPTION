@@ -12,3 +12,4 @@ Imports:
     grid,
     cli,
     ComplexHeatmap
+ByteCompile: true
