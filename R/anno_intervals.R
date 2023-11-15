@@ -93,7 +93,7 @@ anno_linerange <- function(x, which = NULL, pch = 19, size = 1, point_gp = gpar(
             cur_size <- size[index[na_row]]
             pushViewport(cheat_viewport(which, c(0.5, n + 0.5), limits))
             coord_x <- cheat_x(n, which)
-            if (band) {
+            if (isTRUE(band)) {
                 add_band(n,
                     which = which, x = coord_x,
                     limits = limits, band_col = band_col
