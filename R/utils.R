@@ -2,7 +2,6 @@
     if (!is.null(a)) a else b
 }
 
-
 #' Rename elements in a list, data.frame or vector
 #'
 #' This is akin to `dplyr::rename` and `plyr::rename`. It renames elements given
