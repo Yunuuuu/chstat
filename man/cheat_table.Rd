@@ -9,11 +9,13 @@ cheat_table(
   ...,
   format = NULL,
   text_gp = gpar(),
-  band = NULL,
+  band = "row",
   band_col = c("white", "#eff3f2"),
-  rect_gp = gpar(type = "none"),
   layer_fun = NULL,
-  show_heatmap_legend = FALSE
+  show_heatmap_legend = FALSE,
+  cluster_rows = FALSE,
+  cluster_columns = FALSE,
+  rect_gp = gpar(type = "none")
 )
 }
 \arguments{
@@ -39,7 +41,6 @@ converted to a one-column matrix.}
     \item{\code{column_title_side}}{Will the title be put on the top or bottom of the heatmap?}
     \item{\code{column_title_gp}}{Graphic parameters for column title.}
     \item{\code{column_title_rot}}{Rotation of column titles.}
-    \item{\code{cluster_rows}}{If the value is a logical, it controls whether to make cluster on rows. The value can also be a \code{\link[stats]{hclust}} or a \code{\link[stats]{dendrogram}} which already contains clustering. Check \url{https://jokergoo.github.io/ComplexHeatmap-reference/book/a-single-heatmap.html#clustering} .}
     \item{\code{cluster_row_slices}}{If rows are split into slices, whether perform clustering on the slice means?}
     \item{\code{clustering_distance_rows}}{It can be a pre-defined character which is in  ("euclidean", "maximum", "manhattan", "canberra", "binary",  "minkowski", "pearson", "spearman", "kendall"). It can also be a function. If the function has one argument, the input argument should be a matrix and  the returned value should be a \code{\link[stats]{dist}} object. If the function has two arguments, the input arguments are two vectors and the function calculates distance between these two vectors.}
     \item{\code{clustering_method_rows}}{Method to perform hierarchical clustering, pass to \code{\link[stats]{hclust}}.}
@@ -48,7 +49,6 @@ converted to a one-column matrix.}
     \item{\code{show_row_dend}}{Whether show row dendrogram?}
     \item{\code{row_dend_gp}}{Graphic parameters for the dendrogram segments. If users already provide a \code{\link[stats]{dendrogram}} object with edges rendered, this argument will be ignored.}
     \item{\code{row_dend_reorder}}{Apply reordering on row dendrograms. The value can be a logical value or a vector which contains weight  which is used to reorder rows. The reordering is applied by \code{\link[stats]{reorder.dendrogram}}.}
-    \item{\code{cluster_columns}}{Whether make cluster on columns? Same settings as \code{cluster_rows}.}
     \item{\code{cluster_column_slices}}{If columns are split into slices, whether perform clustering on the slice means?}
     \item{\code{clustering_distance_columns}}{Same setting as \code{clustering_distance_rows}.}
     \item{\code{clustering_method_columns}}{Method to perform hierarchical clustering, pass to \code{\link[stats]{hclust}}.}
@@ -106,20 +106,24 @@ converted to a one-column matrix.}
 
 \item{format}{Format strings, see \link{sprintf}.}
 
-\item{text_gp}{A \link{gpar} objects define the text attributes.}
+\item{text_gp}{A \link[grid:gpar]{gpar} objects define the text attributes.}
 
 \item{band}{A string, "row" or "column", add row or column interval color
 band. If \code{NULL}, no band will be added.}
 
 \item{band_col}{Color define the band interval. Should be of length 2L.}
 
-\item{rect_gp}{Graphic parameters for drawing rectangles (for heatmap body).
-The value should be specified by \link{gpar} and \code{fill} parameter is ignored.
-Using \code{type = "none"} to draw nothing on the heatmap body.}
-
 \item{layer_fun}{Similar as \code{cell_fun}, but is vectorized. Check \url{https://jokergoo.github.io/ComplexHeatmap-reference/book/a-single-heatmap.html#customize-the-heatmap-body} .}
 
 \item{show_heatmap_legend}{Whether show heatmap legend?}
+
+\item{cluster_rows}{If the value is a logical, it controls whether to make cluster on rows. The value can also be a \code{\link[stats]{hclust}} or a \code{\link[stats]{dendrogram}} which already contains clustering. Check \url{https://jokergoo.github.io/ComplexHeatmap-reference/book/a-single-heatmap.html#clustering} .}
+
+\item{cluster_columns}{Whether make cluster on columns? Same settings as \code{cluster_rows}.}
+
+\item{rect_gp}{Graphic parameters for drawing rectangles (for heatmap body).
+The value should be specified by \link[grid:gpar]{gpar} and \code{fill} parameter is
+ignored.  Using \code{type = "none"} to draw nothing on the heatmap body.}
 }
 \description{
 Graphical display of a textual table

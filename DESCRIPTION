@@ -11,5 +11,6 @@ RoxygenNote: 7.2.3
 Imports: 
     grid,
     cli,
-    ComplexHeatmap
+    ComplexHeatmap,
+    methods
 ByteCompile: true

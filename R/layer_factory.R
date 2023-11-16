@@ -37,7 +37,7 @@ layer_band <- function(band, band_col = c("white", "#eff3f2")) {
 
 #' @param matrix Text matrix used to draw.
 #' @param format Format strings, see [sprintf].
-#' @param gp A [gpar] objects define the text attributes.
+#' @param gp A [gpar][grid::gpar] objects define the text attributes.
 #' @export
 #' @rdname layer-fun
 layer_text <- function(matrix, format = NULL, gp = gpar()) {

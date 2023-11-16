@@ -20,7 +20,7 @@ band.}
 
 \item{format}{Format strings, see \link{sprintf}.}
 
-\item{gp}{A \link{gpar} objects define the text attributes.}
+\item{gp}{A \link[grid:gpar]{gpar} objects define the text attributes.}
 }
 \value{
 A layer_fun function for the usage of

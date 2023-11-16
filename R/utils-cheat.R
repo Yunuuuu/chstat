@@ -7,8 +7,8 @@ cheat_grid <- function(fn, which, ...) {
     do.call(fn, params)
 }
 
-cheat_viewport <- function(which, xscale, yscale) {
-    cheat_grid(viewport, which = which, xscale = xscale, yscale = yscale)
+cheat_viewport <- function(which, ...) {
+    cheat_grid(viewport, which = which, ...)
 }
 
 cheat_x <- function(n, which) {

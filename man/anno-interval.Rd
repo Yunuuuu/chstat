@@ -35,7 +35,8 @@ estimate and confidence interval (lower and higher).}
 
 \item{which}{Whether it is drawn as a column annotation or a row annotation?}
 
-\item{width}{A \link{unit} object specifying the width of the tip head.}
+\item{width}{A \link[grid:unit]{unit} object specifying the width of the tip
+head.}
 
 \item{pch}{numeric or character vector indicating what sort of
     plotting symbol to use.  See \code{\link{points}} for the
@@ -43,9 +44,9 @@ estimate and confidence interval (lower and higher).}
 
 \item{size}{unit object specifying the size of the plotting symbols.}
 
-\item{point_gp}{A \link{gpar} objects define the point attributes.}
+\item{point_gp}{A \link[grid:gpar]{gpar} objects define the point attributes.}
 
-\item{line_gp}{A \link{gpar} objects define the line attributes.}
+\item{line_gp}{A \link[grid:gpar]{gpar} objects define the line attributes.}
 
 \item{band}{A bool, if \code{TRUE}, will add color band interval}
 
